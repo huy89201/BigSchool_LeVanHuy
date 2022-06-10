@@ -9,20 +9,21 @@ namespace BigSchool_LeVanHuy.ViewModels
 {
     public class CourseViewModel
     {   
-        [Required]
-        private string time;
-        [Required]
-        private byte category;
-        [Required]
         private string place;
-        [Required]
-        [FutureDate]
         private string date;
+        private string time;
+        private byte category;
         private IEnumerable<Category> categories;
 
+        [Required]
         public string Place { get => place; set => place = value; }
+        [Required]
+        [FutureDate]
         public string Date { get => date; set => date = value; }
+        [Required]
+        [ValidTime]
         public string Time { get => time; set => time = value; }
+        [Required]
         public byte Category { get => category; set => category = value; }
         public IEnumerable<Category> Categories { get => categories; set => categories = value; }
 
